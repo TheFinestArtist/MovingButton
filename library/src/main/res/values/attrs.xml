@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MovingButton">
-        <attr name="mb_button_movement">
+        <attr name="mb_move_direction">
             <enum name="all" value="0" />
             <enum name="horizontal_vertical" value="1" />
             <enum name="horizontal" value="2" />

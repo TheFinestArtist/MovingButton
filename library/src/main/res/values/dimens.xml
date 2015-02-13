@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="default_movement">10dp</dimen>
-    <dimen name="default_movement_left">10dp</dimen>
-    <dimen name="default_movement_right">10dp</dimen>
-    <dimen name="default_movement_top">10dp</dimen>
-    <dimen name="default_movement_bottom">10dp</dimen>
     <dimen name="default_offset_inner">16dp</dimen>
     <dimen name="default_offset_outer">23dp</dimen>
 </resources>

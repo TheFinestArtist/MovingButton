@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Moving Button</string>
+    <string name="move">Move</string>
+    <string name="settings">SETTINGS</string>
+    <string name="mb_move_direction">mb_move_direction</string>
+    <string name="mb_movement_right">mb_movement_right</string>
+    <string name="mb_movement_top">mb_movement_top</string>
+    <string name="mb_movement_bottom">mb_movement_bottom</string>
+    <string name="mb_offset_inner">mb_offset_inner</string>
+    <string name="mb_offset_outer">mb_offset_outer</string>
+    <string name="mb_event_volume">mb_event_volume</string>
+    <string name="mb_vibration_strength">mb_vibration_strength</string>
+    <string name="mb_movement_left">mb_movement_left</string>
 </resources>

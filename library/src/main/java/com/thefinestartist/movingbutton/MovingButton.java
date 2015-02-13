@@ -9,8 +9,8 @@ import android.view.ViewParent;
 import android.widget.Button;
 
 import com.nineoldandroids.view.ViewHelper;
-import com.thefinestartist.movingbutton.enums.ButtonMovement;
 import com.thefinestartist.movingbutton.enums.ButtonPosition;
+import com.thefinestartist.movingbutton.enums.MoveDirection;
 import com.thefinestartist.movingbutton.enums.VibrationStrength;
 import com.thefinestartist.movingbutton.utils.SoundUtil;
 import com.thefinestartist.movingbutton.utils.VibrateUtil;
@@ -24,11 +24,12 @@ public class MovingButton extends Button {
         void onPositionChanged(int action, ButtonPosition position);
     }
 
+    MoveDirection moveDirection;
+
     int movementLeft;
     int movementRight;
     int movementTop;
     int movementBottom;
-    ButtonMovement buttonMovement;
 
     int offSetInner;
     int offSetOuter;
@@ -56,16 +57,16 @@ public class MovingButton extends Button {
     private void init(Context context, AttributeSet attrs) {
         TypedArray attr = context.obtainStyledAttributes(attrs, R.styleable.MovingButton, 0, 0);
 
-        movementLeft = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_left,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_left));
-        movementRight = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_right,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_right));
-        movementTop = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_top,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_top));
-        movementBottom = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_bottom,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_bottom));
+        moveDirection = MoveDirection.values()[attr.getInt(R.styleable.MovingButton_mb_move_direction, 0)];
 
-        buttonMovement = ButtonMovement.values()[attr.getInt(R.styleable.MovingButton_mb_button_movement, 0)];
+        movementLeft = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_left, 0);
+        movementRight = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_right, 0);
+        movementTop = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_top, 0);
+        movementBottom = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_bottom, 0);
+
+        int movement = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement, 0);
+        if (movement != 0)
+            movementLeft = movementRight = movementTop = movementBottom = movement;
 
         offSetInner = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_offset_inner,
                 getResources().getDimensionPixelSize(R.dimen.default_offset_inner));
@@ -107,7 +108,7 @@ public class MovingButton extends Button {
                 float diffX = event.getX() - centerX;
                 float diffY = centerY - event.getY();
 
-                switch (buttonMovement) {
+                switch (moveDirection) {
                     case ALL: {
                         double length = Math.sqrt(Math.pow(diffX, 2d) + Math.pow(diffY, 2d));
                         if (length > offSetOuter)
@@ -399,12 +400,12 @@ public class MovingButton extends Button {
         this.movementBottom = movementBottom;
     }
 
-    public ButtonMovement getButtonMovement() {
-        return buttonMovement;
+    public MoveDirection getMoveDirection() {
+        return moveDirection;
     }
 
-    public void setButtonMovement(ButtonMovement buttonMovement) {
-        this.buttonMovement = buttonMovement;
+    public void setMoveDirection(MoveDirection moveDirection) {
+        this.moveDirection = moveDirection;
     }
 
     public int getOffSetInner() {
