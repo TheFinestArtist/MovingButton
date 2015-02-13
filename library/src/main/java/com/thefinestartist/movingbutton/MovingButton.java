@@ -19,6 +19,10 @@ import com.thefinestartist.movingbutton.utils.VibrateUtil;
  */
 public class MovingButton extends Button {
 
+    public interface OnPositionChangedListener {
+        void onPositionChanged(int action, ButtonPosition position);
+    }
+
     int movementVertical;
     int movementHorizontal;
     ButtonMovement buttonMovement;
@@ -29,6 +33,8 @@ public class MovingButton extends Button {
     VibrationStrength vibrationStrength;
 
     int eventVolume;
+
+    OnPositionChangedListener onPositionChangedListener;
 
     public MovingButton(Context context) {
         this(context, null);
@@ -82,6 +88,7 @@ public class MovingButton extends Button {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                positionChanged(MotionEvent.ACTION_DOWN, ButtonPosition.STILL);
                 soundAndVibrate();
                 halfWidth = (float) this.getWidth() / 2.0f;
                 halfHeight = (float) this.getHeight() / 2.0f;
@@ -128,6 +135,7 @@ public class MovingButton extends Button {
                 break;
             case MotionEvent.ACTION_UP:
                 moveView(this, ButtonPosition.STILL);
+                positionChanged(MotionEvent.ACTION_UP, ButtonPosition.STILL);
                 break;
         }
         return super.onTouchEvent(event);
@@ -178,6 +186,7 @@ public class MovingButton extends Button {
         if (position == null || currentPosition == position)
             return;
 
+        positionChanged(MotionEvent.ACTION_MOVE, position);
         soundAndVibrate();
         currentPosition = position;
 
@@ -292,6 +301,11 @@ public class MovingButton extends Button {
         SoundUtil.playSound(getContext(), eventVolume);
     }
 
+    private void positionChanged(int action, ButtonPosition position) {
+        if (onPositionChangedListener != null)
+            onPositionChangedListener.onPositionChanged(action, position);
+    }
+
     /**
      * Getter & Setter
      */
@@ -357,5 +371,13 @@ public class MovingButton extends Button {
 
     public void setCurrentPosition(ButtonPosition currentPosition) {
         this.currentPosition = currentPosition;
+    }
+
+    public OnPositionChangedListener getOnPositionChangedListener() {
+        return onPositionChangedListener;
+    }
+
+    public void setOnPositionChangedListener(OnPositionChangedListener onPositionChangedListener) {
+        this.onPositionChangedListener = onPositionChangedListener;
     }
 }
