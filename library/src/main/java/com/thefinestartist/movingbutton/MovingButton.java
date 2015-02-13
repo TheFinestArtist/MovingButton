@@ -24,8 +24,10 @@ public class MovingButton extends Button {
         void onPositionChanged(int action, ButtonPosition position);
     }
 
-    int movementVertical;
-    int movementHorizontal;
+    int movementLeft;
+    int movementRight;
+    int movementTop;
+    int movementBottom;
     ButtonMovement buttonMovement;
 
     int offSetInner;
@@ -54,10 +56,14 @@ public class MovingButton extends Button {
     private void init(Context context, AttributeSet attrs) {
         TypedArray attr = context.obtainStyledAttributes(attrs, R.styleable.MovingButton, 0, 0);
 
-        movementHorizontal = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_horizontal,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_horizontal));
-        movementVertical = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_vertical,
-                getResources().getDimensionPixelSize(R.dimen.default_movement_vertical));
+        movementLeft = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_left,
+                getResources().getDimensionPixelSize(R.dimen.default_movement_left));
+        movementRight = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_right,
+                getResources().getDimensionPixelSize(R.dimen.default_movement_right));
+        movementTop = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_top,
+                getResources().getDimensionPixelSize(R.dimen.default_movement_top));
+        movementBottom = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_bottom,
+                getResources().getDimensionPixelSize(R.dimen.default_movement_bottom));
 
         buttonMovement = ButtonMovement.values()[attr.getInt(R.styleable.MovingButton_mb_button_movement, 0)];
 
@@ -163,36 +169,36 @@ public class MovingButton extends Button {
                 centerY = halfHeight;
                 break;
             case RIGHT:
-                centerX = halfWidth - movementHorizontal;
+                centerX = halfWidth - movementRight;
                 centerY = halfHeight;
                 break;
             case RIGHT_DOWN:
-                centerX = halfWidth - movementHorizontal;
-                centerY = halfHeight - movementVertical;
+                centerX = halfWidth - movementRight;
+                centerY = halfHeight - movementBottom;
                 break;
             case DOWN:
                 centerX = halfWidth;
-                centerY = halfHeight - movementVertical;
+                centerY = halfHeight - movementBottom;
                 break;
             case LEFT_DOWN:
-                centerX = halfWidth + movementHorizontal;
-                centerY = halfHeight - movementVertical;
+                centerX = halfWidth + movementLeft;
+                centerY = halfHeight - movementBottom;
                 break;
             case LEFT:
-                centerX = halfWidth + movementHorizontal;
+                centerX = halfWidth + movementLeft;
                 centerY = halfHeight;
                 break;
             case LEFT_UP:
-                centerX = halfWidth + movementHorizontal;
-                centerY = halfHeight + movementVertical;
+                centerX = halfWidth + movementLeft;
+                centerY = halfHeight + movementTop;
                 break;
             case UP:
                 centerX = halfWidth;
-                centerY = halfHeight + movementVertical;
+                centerY = halfHeight + movementTop;
                 break;
             case RIGHT_UP:
-                centerX = halfWidth - movementHorizontal;
-                centerY = halfHeight + movementVertical;
+                centerX = halfWidth - movementRight;
+                centerY = halfHeight + movementTop;
                 break;
         }
     }
@@ -212,36 +218,36 @@ public class MovingButton extends Button {
                 goalViewY = 0;
                 break;
             case LEFT:
-                goalViewX = -movementHorizontal;
+                goalViewX = -movementLeft;
                 goalViewY = 0;
                 break;
             case RIGHT:
-                goalViewX = movementHorizontal;
+                goalViewX = movementRight;
                 goalViewY = 0;
                 break;
             case UP:
                 goalViewX = 0;
-                goalViewY = -movementVertical;
+                goalViewY = -movementTop;
                 break;
             case DOWN:
                 goalViewX = 0;
-                goalViewY = movementVertical;
+                goalViewY = movementBottom;
                 break;
             case LEFT_UP:
-                goalViewX = -movementHorizontal;
-                goalViewY = -movementVertical;
+                goalViewX = -movementLeft;
+                goalViewY = -movementTop;
                 break;
             case LEFT_DOWN:
-                goalViewX = -movementHorizontal;
-                goalViewY = movementVertical;
+                goalViewX = -movementLeft;
+                goalViewY = movementBottom;
                 break;
             case RIGHT_UP:
-                goalViewX = +movementHorizontal;
-                goalViewY = -movementVertical;
+                goalViewX = +movementRight;
+                goalViewY = -movementTop;
                 break;
             case RIGHT_DOWN:
-                goalViewX = movementHorizontal;
-                goalViewY = movementVertical;
+                goalViewX = movementRight;
+                goalViewY = movementBottom;
                 break;
         }
 
@@ -361,20 +367,36 @@ public class MovingButton extends Button {
     /**
      * Getter & Setter
      */
-    public int getMovementVertical() {
-        return movementVertical;
+    public int getMovementLeft() {
+        return movementLeft;
     }
 
-    public void setMovementVertical(int movementVertical) {
-        this.movementVertical = movementVertical;
+    public void setMovementLeft(int movementLeft) {
+        this.movementLeft = movementLeft;
     }
 
-    public int getMovementHorizontal() {
-        return movementHorizontal;
+    public int getMovementRight() {
+        return movementRight;
     }
 
-    public void setMovementHorizontal(int movementHorizontal) {
-        this.movementHorizontal = movementHorizontal;
+    public void setMovementRight(int movementRight) {
+        this.movementRight = movementRight;
+    }
+
+    public int getMovementTop() {
+        return movementTop;
+    }
+
+    public void setMovementTop(int movementTop) {
+        this.movementTop = movementTop;
+    }
+
+    public int getMovementBottom() {
+        return movementBottom;
+    }
+
+    public void setMovementBottom(int movementBottom) {
+        this.movementBottom = movementBottom;
     }
 
     public ButtonMovement getButtonMovement() {

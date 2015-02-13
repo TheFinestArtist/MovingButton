@@ -8,8 +8,11 @@
             <enum name="vertical" value="3" />
             <enum name="still" value="4" />
         </attr>
-        <attr name="mb_movement_horizontal" format="dimension" />
-        <attr name="mb_movement_vertical" format="dimension" />
+        <attr name="mb_movement" format="dimension" />
+        <attr name="mb_movement_left" format="dimension" />
+        <attr name="mb_movement_right" format="dimension" />
+        <attr name="mb_movement_top" format="dimension" />
+        <attr name="mb_movement_bottom" format="dimension" />
         <attr name="mb_offset_inner" format="dimension" />
         <attr name="mb_offset_outer" format="dimension" />
         <attr name="mb_vibration_strength">
