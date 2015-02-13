@@ -16,4 +16,32 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:gravity="center">
+
+                <com.thefinestartist.movingbutton.MovingButton
+                    android:id="@+id/moving_button"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:background="@color/accent"
+                    android:layout_gravity="center"
+                    app:mb_event_volume="50"
+                    app:mb_vibration_strength="normal"
+                    app:mb_movement_horizontal="20dp"
+                    app:mb_movement_vertical="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

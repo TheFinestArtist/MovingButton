@@ -3,8 +3,10 @@ package com.thefinestartist.movingbutton;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewParent;
 import android.widget.Button;
 
 import com.nineoldandroids.view.ViewHelper;
@@ -88,6 +90,7 @@ public class MovingButton extends Button {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                requestTouchEvent();
                 positionChanged(MotionEvent.ACTION_DOWN, ButtonPosition.STILL);
                 soundAndVibrate();
                 halfWidth = (float) this.getWidth() / 2.0f;
@@ -134,6 +137,7 @@ public class MovingButton extends Button {
 
                 break;
             case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
                 moveView(this, ButtonPosition.STILL);
                 positionChanged(MotionEvent.ACTION_UP, ButtonPosition.STILL);
                 break;
@@ -305,6 +309,13 @@ public class MovingButton extends Button {
         if (onPositionChangedListener != null)
             onPositionChangedListener.onPositionChanged(action, position);
     }
+
+    private void requestTouchEvent() {
+        ViewParent parent = getParent();
+        if (parent != null)
+            parent.requestDisallowInterceptTouchEvent(true);
+    }
+
 
     /**
      * Getter & Setter
