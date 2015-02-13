@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MovingButton">
+        <attr name="mb_movement_horizontal" format="dimension" />
+        <attr name="mb_movement_vertical" format="dimension" />
+        <attr name="mb_offset_inner" format="dimension" />
+        <attr name="mb_offset_outer" format="dimension" />
+        <attr name="mb_vibration_strength">
+            <enum name="none" value="0" />
+            <enum name="weakest" value="1" />
+            <enum name="weak" value="2" />
+            <enum name="normal" value="3" />
+            <enum name="strong" value="4" />
+            <enum name="strongest" value="5" />
+        </attr>
+        <attr name="mb_event_volume" format="integer" />
+    </declare-styleable>
+</resources>
