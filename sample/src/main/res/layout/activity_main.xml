@@ -36,6 +36,7 @@
                     android:layout_height="30dp"
                     android:background="@color/accent"
                     android:layout_gravity="center"
+                    app:mb_button_movement="horizontal_vertical"
                     app:mb_event_volume="50"
                     app:mb_vibration_strength="normal"
                     app:mb_movement_horizontal="20dp"

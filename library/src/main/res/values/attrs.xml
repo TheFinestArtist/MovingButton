@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MovingButton">
+        <attr name="mb_button_movement">
+            <enum name="all" value="0" />
+            <enum name="horizontal_vertical" value="1" />
+            <enum name="horizontal" value="2" />
+            <enum name="vertical" value="3" />
+            <enum name="still" value="4" />
+        </attr>
         <attr name="mb_movement_horizontal" format="dimension" />
         <attr name="mb_movement_vertical" format="dimension" />
         <attr name="mb_offset_inner" format="dimension" />

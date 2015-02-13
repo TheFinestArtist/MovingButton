@@ -3,7 +3,6 @@ package com.thefinestartist.movingbutton;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
@@ -60,8 +59,7 @@ public class MovingButton extends Button {
         movementVertical = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_movement_vertical,
                 getResources().getDimensionPixelSize(R.dimen.default_movement_vertical));
 
-        buttonMovement = movementHorizontal != 0 ? movementVertical != 0 ? ButtonMovement.ALL : ButtonMovement.LEFT_RIGHT
-                : movementVertical != 0 ? ButtonMovement.TOP_BOTTOM : ButtonMovement.NONE;
+        buttonMovement = ButtonMovement.values()[attr.getInt(R.styleable.MovingButton_mb_button_movement, 0)];
 
         offSetInner = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_offset_inner,
                 getResources().getDimensionPixelSize(R.dimen.default_offset_inner));
@@ -91,11 +89,11 @@ public class MovingButton extends Button {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 requestTouchEvent();
-                positionChanged(MotionEvent.ACTION_DOWN, ButtonPosition.STILL);
+                positionChanged(MotionEvent.ACTION_DOWN, ButtonPosition.ORIGIN);
                 soundAndVibrate();
                 halfWidth = (float) this.getWidth() / 2.0f;
                 halfHeight = (float) this.getHeight() / 2.0f;
-                currentPosition = ButtonPosition.STILL;
+                currentPosition = ButtonPosition.ORIGIN;
                 firstMoved = true;
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -104,42 +102,55 @@ public class MovingButton extends Button {
                 float diffY = centerY - event.getY();
 
                 switch (buttonMovement) {
-                    case ALL:
+                    case ALL: {
                         double length = Math.sqrt(Math.pow(diffX, 2d) + Math.pow(diffY, 2d));
                         if (length > offSetOuter)
                             if (firstMoved) {
-                                moveView(this, getPosition(diffX, diffY));
+                                moveView(this, getPositionForAll(diffX, diffY));
                                 firstMoved = false;
                             } else
-                                moveView(this, getDetailedPosition(diffX, diffY));
+                                moveView(this, getDetailedPositionForAll(diffX, diffY));
                         else if (length < offSetInner)
-                            moveView(this, ButtonPosition.STILL);
+                            moveView(this, ButtonPosition.ORIGIN);
                         break;
-                    case TOP_BOTTOM:
+                    }
+                    case HORIZONTAL_VERTICAL: {
+                        double length = Math.sqrt(Math.pow(diffX, 2d) + Math.pow(diffY, 2d));
+                        if (length > offSetOuter)
+                            if (firstMoved) {
+                                moveView(this, getPositionForHV(diffX, diffY));
+                                firstMoved = false;
+                            } else
+                                moveView(this, getDetailedPositionForHV(diffX, diffY));
+                        else if (length < offSetInner)
+                            moveView(this, ButtonPosition.ORIGIN);
+                        break;
+                    }
+                    case VERTICAL:
                         if (diffY > offSetOuter)
                             moveView(this, ButtonPosition.UP);
                         else if (diffY < -offSetOuter)
                             moveView(this, ButtonPosition.DOWN);
                         else if (Math.abs(diffY) < offSetInner)
-                            moveView(this, ButtonPosition.STILL);
+                            moveView(this, ButtonPosition.ORIGIN);
                         break;
-                    case LEFT_RIGHT:
+                    case HORIZONTAL:
                         if (diffX > offSetOuter)
                             moveView(this, ButtonPosition.RIGHT);
                         else if (diffX < -offSetOuter)
                             moveView(this, ButtonPosition.LEFT);
                         else if (Math.abs(diffX) < offSetInner)
-                            moveView(this, ButtonPosition.STILL);
+                            moveView(this, ButtonPosition.ORIGIN);
                         break;
-                    case NONE:
+                    case STILL:
                         break;
                 }
 
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
-                moveView(this, ButtonPosition.STILL);
-                positionChanged(MotionEvent.ACTION_UP, ButtonPosition.STILL);
+                moveView(this, ButtonPosition.ORIGIN);
+                positionChanged(MotionEvent.ACTION_UP, ButtonPosition.ORIGIN);
                 break;
         }
         return super.onTouchEvent(event);
@@ -147,7 +158,7 @@ public class MovingButton extends Button {
 
     private void recalculateCenter() {
         switch (currentPosition) {
-            case STILL:
+            case ORIGIN:
                 centerX = halfWidth;
                 centerY = halfHeight;
                 break;
@@ -196,7 +207,7 @@ public class MovingButton extends Button {
 
         float goalViewX = 0, goalViewY = 0;
         switch (position) {
-            case STILL:
+            case ORIGIN:
                 goalViewX = 0;
                 goalViewY = 0;
                 break;
@@ -252,11 +263,12 @@ public class MovingButton extends Button {
         return angle * 180d / Math.PI;
     }
 
-    private ButtonPosition getPosition(double diffX, double diffY) {
-        return getPosition(getAngle(diffX, diffY));
-    }
+    /**
+     * ButtonMovement.ALL
+     */
+    private ButtonPosition getPositionForAll(double diffX, double diffY) {
+        double angle = getAngle(diffX, diffY);
 
-    private ButtonPosition getPosition(double angle) {
         if (67.5 > angle && angle >= 22.5)
             return ButtonPosition.RIGHT_UP;
         else if (22.5 > angle || angle >= 337.5)
@@ -275,11 +287,9 @@ public class MovingButton extends Button {
             return ButtonPosition.UP;
     }
 
-    private ButtonPosition getDetailedPosition(double diffX, double diffY) {
-        return getDetailedPosition(getAngle(diffX, diffY));
-    }
+    private ButtonPosition getDetailedPositionForAll(double diffX, double diffY) {
+        double angle = getAngle(diffX, diffY);
 
-    private ButtonPosition getDetailedPosition(double angle) {
         if (11.25 > angle || angle >= 348.75)
             return ButtonPosition.RIGHT;
         else if (326.25 > angle && angle >= 303.75)
@@ -296,6 +306,37 @@ public class MovingButton extends Button {
             return ButtonPosition.UP;
         else if (56.25 > angle && angle >= 33.75)
             return ButtonPosition.RIGHT_UP;
+        else
+            return null;
+    }
+
+    /**
+     * ButtonMovement.HORIZONTAL_VERTICAL
+     */
+    private ButtonPosition getPositionForHV(double diffX, double diffY) {
+        double angle = getAngle(diffX, diffY);
+
+        if (45 > angle || angle >= 315)
+            return ButtonPosition.RIGHT;
+        else if (315 > angle && angle >= 225)
+            return ButtonPosition.DOWN;
+        else if (225 > angle && angle >= 135)
+            return ButtonPosition.LEFT;
+        else
+            return ButtonPosition.UP;
+    }
+
+    private ButtonPosition getDetailedPositionForHV(double diffX, double diffY) {
+        double angle = getAngle(diffX, diffY);
+
+        if (22.5 > angle || angle >= 342.5)
+            return ButtonPosition.RIGHT;
+        else if (292.5 > angle && angle >= 247.5)
+            return ButtonPosition.DOWN;
+        else if (202.5 > angle && angle >= 157.5)
+            return ButtonPosition.LEFT;
+        else if (112.5 > angle && angle >= 67.5)
+            return ButtonPosition.UP;
         else
             return null;
     }
