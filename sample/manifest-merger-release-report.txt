@@ -17,39 +17,49 @@ uses-permission#android.permission.VIBRATE
 ADDED from AndroidManifest.xml:5:5
 	android:name
 		ADDED from AndroidManifest.xml:5:22
-application
+uses-permission#android.permission.INTERNET
 ADDED from AndroidManifest.xml:7:5
+	android:name
+		ADDED from AndroidManifest.xml:7:22
+application
+ADDED from AndroidManifest.xml:9:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
 MERGED from com.afollestad:material-dialogs:0.6.2.4:12:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
 	android:label
-		ADDED from AndroidManifest.xml:10:9
+		ADDED from AndroidManifest.xml:12:9
 	android:allowBackup
-		ADDED from AndroidManifest.xml:8:9
+		ADDED from AndroidManifest.xml:10:9
 	android:icon
-		ADDED from AndroidManifest.xml:9:9
-	android:theme
 		ADDED from AndroidManifest.xml:11:9
+	android:theme
+		ADDED from AndroidManifest.xml:13:9
 activity#com.thefinestartist.movingbutton.sample.MainActivity
-ADDED from AndroidManifest.xml:12:9
+ADDED from AndroidManifest.xml:14:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:15:13
+		ADDED from AndroidManifest.xml:17:13
 	android:label
-		ADDED from AndroidManifest.xml:14:13
+		ADDED from AndroidManifest.xml:16:13
 	android:name
-		ADDED from AndroidManifest.xml:13:13
+		ADDED from AndroidManifest.xml:15:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:16:13
+ADDED from AndroidManifest.xml:18:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:17:17
-	android:name
-		ADDED from AndroidManifest.xml:17:25
-category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:19:17
 	android:name
-		ADDED from AndroidManifest.xml:19:27
+		ADDED from AndroidManifest.xml:19:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:21:17
+	android:name
+		ADDED from AndroidManifest.xml:21:27
+meta-data#com.crashlytics.ApiKey
+ADDED from AndroidManifest.xml:24:9
+	android:value
+		ADDED from AndroidManifest.xml:24:58
+	android:name
+		ADDED from AndroidManifest.xml:24:20
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

@@ -365,9 +365,7 @@ public class MovingButton extends Button {
     }
 
 
-    /**
-     * Getter & Setter
-     */
+    // Getter and Setter
     public int getMovementLeft() {
         return movementLeft;
     }
