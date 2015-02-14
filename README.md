@@ -23,11 +23,14 @@
 <attr name="mb_movement_top" format="dimension" />
 <attr name="mb_movement_bottom" format="dimension" />
 
-<!--Button Event Offset (Helps to calculate touch event offsets)-->
+<!--Button Event Offset-->
+<!--Helps to calculate touch event from button-->
 <attr name="mb_offset_inner" format="dimension" />
 <attr name="mb_offset_outer" format="dimension" />
 
-<!--Vibrate on button movement, if you set the strength as none, no android.permission.VIBRATE Permission required-->
+<!--Vibrate on button movement-->
+<!--android.permission.VIBRATE Permission required-->
+<!--if you set the strength as none, no Permission required!-->
 <attr name="mb_vibration_strength">
     <enum name="none" value="0" />
     <enum name="weakest" value="1" />
@@ -44,7 +47,8 @@
 ## Layout Examples
 
 ```xml
-<com.thefinestartist.movingbutton.MovingButton xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.thefinestartist.movingbutton.MovingButton
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/moving_button"
     android:layout_width="100dp"
     android:layout_height="40dp"
@@ -53,7 +57,8 @@
     app:mb_vibration_strength="none"
     app:mb_movement="10dp" />
 
-<com.thefinestartist.movingbutton.MovingButton xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.thefinestartist.movingbutton.MovingButton
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/moving_button"
     android:layout_width="100dp"
     android:layout_height="40dp"
