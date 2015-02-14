@@ -1,10 +1,13 @@
 # Moving Button
 
-[![Preview](http://img.youtube.com/vi/myheMkavjzk/0.jpg)](http://www.youtube.com/watch?v=myheMkavjzk)
+Play Preview
+[![Preview](https://github.com/thefinestartist/movingbutton/raw/master/etc/play_preview.png)](http://www.youtube.com/watch?v=myheMkavjzk)
+
+You can download preview movie file here : [preview.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/preview.mov)
 
 ## Sample Project
 
-You can download the latest sample APK from this repo here: [sample-release.apk](https://github.com/thefinestartist/movingbutton/blob/master/sample/sample-release.apk)
+You can download the latest sample APK from this repo here: [sample-release.apk](https://github.com/thefinestartist/movingbutton/raw/master/sample/sample-release.apk)
 
 It's also on Google Play:
 
