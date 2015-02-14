@@ -110,38 +110,38 @@ dependencies {
 ## Setter & Getter
 
 ```java
-    // Move Direction
-    movingButton.getMoveDirection();
-    movingButton.setMoveDirection(MoveDirection.ALL);
+// Move Direction
+movingButton.getMoveDirection();
+movingButton.setMoveDirection(MoveDirection.ALL);
 
-    // Movement (in Pixel dimension)
-    movingButton.getMovement();
-    movingButton.setMovement(10);
-    movingButton.getMovementLeft();
-    movingButton.setMovementLeft(10);
-    movingButton.getMovementRight();
-    movingButton.setMovementRight(10);
-    movingButton.getMovementTop();
-    movingButton.setMovementTop(10);
-    movingButton.getMovementBottom();
-    movingButton.setMovementBottom(10);
+// Movement (in Pixel dimension)
+movingButton.getMovement();
+movingButton.setMovement(10);
+movingButton.getMovementLeft();
+movingButton.setMovementLeft(10);
+movingButton.getMovementRight();
+movingButton.setMovementRight(10);
+movingButton.getMovementTop();
+movingButton.setMovementTop(10);
+movingButton.getMovementBottom();
+movingButton.setMovementBottom(10);
 
-    // Offset (in Pixel dimension)
-    movingButton.getOffSetInner();
-    movingButton.setOffSetInner(10);
-    movingButton.getOffSetOuter();
-    movingButton.setOffSetOuter(10);
+// Offset (in Pixel dimension)
+movingButton.getOffSetInner();
+movingButton.setOffSetInner(10);
+movingButton.getOffSetOuter();
+movingButton.setOffSetOuter(10);
 
-    // Vibration
-    movingButton.getVibrationStrength();
-    movingButton.setVibrationStrength(VibrationStrength.NORMAL);
+// Vibration
+movingButton.getVibrationStrength();
+movingButton.setVibrationStrength(VibrationStrength.NORMAL);
 
-    // Volume
-    movingButton.getEventVolume();
-    movingButton.setEventVolume(50);
+// Volume
+movingButton.getEventVolume();
+movingButton.setEventVolume(50);
 
-    // Current Position
-    movingButton.getCurrentPosition();
+// Current Position
+movingButton.getCurrentPosition();
 ```
 
 ## Listener
