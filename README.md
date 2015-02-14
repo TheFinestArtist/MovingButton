@@ -1,10 +1,10 @@
 # Moving Button
 
-![Img](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
+[![Preview](http://img.youtube.com/vi/myheMkavjzk/0.jpg)](http://www.youtube.com/watch?v=myheMkavjzk)
 
 ## Sample Project
 
-You can download the latest sample APK from this repo here: https://github.com/thefinestartist/movingbutton/blob/master/sample/sample-release.apk
+You can download the latest sample APK from this repo here: [sample-release.apk](https://github.com/thefinestartist/movingbutton/blob/master/sample/sample-release.apk)
 
 It's also on Google Play:
 
@@ -19,8 +19,8 @@ Having the sample project installed is a good way to be notified of new releases
 
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
 
-```Gradle (In Process)
+```Gradle
 dependencies {
-    compile 'com.thefinestartist:movingbutton:0.9.0'
+    compile 'com.thefinestartist:movingbutton:0.9.0' (work in process)
 }
 ```
