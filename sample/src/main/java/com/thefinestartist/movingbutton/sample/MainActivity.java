@@ -213,7 +213,7 @@ public class MainActivity extends ActionBarActivity {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
                                 movingButton.setEventVolume(which);
-                                outerOffsetTv.setText("" + which);
+                                volumeTv.setText("" + which);
                             }
                         })
                         .positiveText(getString(R.string.choose))

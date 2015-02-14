@@ -53,22 +53,65 @@
                     android:includeFontPadding="false" />
             </LinearLayout>
 
-            <com.thefinestartist.movingbutton.MovingButton
-                android:id="@+id/moving_button"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@drawable/button_background"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="45dp"
-                android:textSize="16dp"
-                android:textColor="@android:color/white"
-                android:text="@string/move"
-                android:includeFontPadding="false"
-                app:mb_move_direction="all"
-                app:mb_event_volume="50"
-                app:mb_vibration_strength="normal"
-                app:mb_movement="10dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="105dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/accent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/accent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@color/accent" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="50dp"
+                    android:background="@color/accent" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/accent" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/accent" />
+
+                <com.thefinestartist.movingbutton.MovingButton
+                    android:id="@+id/moving_button"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="45dp"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/move"
+                    android:includeFontPadding="false"
+                    app:mb_move_direction="all"
+                    app:mb_event_volume="50"
+                    app:mb_vibration_strength="normal"
+                    app:mb_movement="10dp" />
+            </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"
