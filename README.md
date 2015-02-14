@@ -1,6 +1,88 @@
 # Moving Button
 
+## Preview
+
 ![Preview](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
+
+## Attrubutes
+
+```xml
+<!--Button Move Direction-->
+<attr name="mb_move_direction">
+    <enum name="all" value="0" />
+    <enum name="horizontal_vertical" value="1" />
+    <enum name="horizontal" value="2" />
+    <enum name="vertical" value="3" />
+    <enum name="still" value="4" />
+</attr>
+
+<!--Button Movement-->
+<attr name="mb_movement" format="dimension" />
+<attr name="mb_movement_left" format="dimension" />
+<attr name="mb_movement_right" format="dimension" />
+<attr name="mb_movement_top" format="dimension" />
+<attr name="mb_movement_bottom" format="dimension" />
+
+<!--Button Event Offset (Helps to calculate touch event offsets)-->
+<attr name="mb_offset_inner" format="dimension" />
+<attr name="mb_offset_outer" format="dimension" />
+
+<!--Vibrate on button movement, if you set the strength as none, no android.permission.VIBRATE Permission required-->
+<attr name="mb_vibration_strength">
+    <enum name="none" value="0" />
+    <enum name="weakest" value="1" />
+    <enum name="weak" value="2" />
+    <enum name="normal" value="3" />
+    <enum name="strong" value="4" />
+    <enum name="strongest" value="5" />
+</attr>
+
+<!--Play sound on button movement-->
+<attr name="mb_event_volume" format="integer" />
+```
+
+## Layout Examples
+
+```xml
+<com.thefinestartist.movingbutton.MovingButton xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/moving_button"
+    android:layout_width="100dp"
+    android:layout_height="40dp"
+    app:mb_move_direction="vertical"
+    app:mb_event_volume="0"
+    app:mb_vibration_strength="none"
+    app:mb_movement="10dp" />
+
+<com.thefinestartist.movingbutton.MovingButton xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/moving_button"
+    android:layout_width="100dp"
+    android:layout_height="40dp"
+    app:mb_move_direction="all"
+    app:mb_event_volume="50"
+    app:mb_vibration_strength="normal"
+    app:mb_movementLeft="10dp"
+    app:mb_movementRight="15dp"
+    app:mb_movementTop="5dp"
+    app:mb_movementBottom="20dp"
+    app:mb_offset_inner="16dp"
+    app:mb_offset_outer="23dp" />
+```
+
+## Listener
+
+```java
+public interface OnPositionChangedListener {
+    // returns MotionEvent action and changed button position
+    void onPositionChanged(int action, ButtonPosition position);
+}
+
+movingButton.setOnPositionChangedListener(new MovingButton.OnPositionChangedListener() {
+    @Override
+    public void onPositionChanged(int action, ButtonPosition position) {
+        //your code here
+    }
+});
+```
 
 ## Sample Project
 

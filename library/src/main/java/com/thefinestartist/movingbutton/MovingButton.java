@@ -73,8 +73,8 @@ public class MovingButton extends Button {
         offSetOuter = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_offset_outer,
                 getResources().getDimensionPixelSize(R.dimen.default_offset_outer));
 
-        vibrationStrength = VibrationStrength.values()[attr.getInt(R.styleable.MovingButton_mb_vibration_strength, 2)];
-        eventVolume = attr.getInt(R.styleable.MovingButton_mb_event_volume, 50);
+        vibrationStrength = VibrationStrength.values()[attr.getInt(R.styleable.MovingButton_mb_vibration_strength, 0)];
+        eventVolume = attr.getInt(R.styleable.MovingButton_mb_event_volume, 0);
 
         attr.recycle();
     }
