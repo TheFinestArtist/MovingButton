@@ -4,6 +4,40 @@
 
 ![Preview](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
 
+## Sample Demo
+
+You can download demo movie file here : [demo.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/demo.mov)
+
+It's also on Youtube:
+
+<a href="http://www.youtube.com/watch?v=myheMkavjzk">
+  <img alt="Youtube"
+       src="https://github.com/thefinestartist/movingbutton/blob/master/etc/youtube.png" />
+</a>
+
+## Sample Project
+
+You can download the latest sample APK from this repo here: [sample-release.apk](https://github.com/thefinestartist/movingbutton/raw/master/sample/sample-release.apk)
+
+It's also on Google Play:
+
+<a href="https://play.google.com/store/apps/details?id=com.thefinestartist.movingbutton.sample">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+</a>
+
+Having the sample project installed is a good way to be notified of new releases.
+
+## Gradle Dependency
+
+Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
+
+```Gradle
+dependencies {
+    compile 'com.thefinestartist:movingbutton:0.9.0' (work in process)
+}
+```
+
 ## Attrubutes
 
 ```xml
@@ -73,6 +107,90 @@
     app:mb_offset_outer="23dp" />
 ```
 
+## Setter & Getter
+
+```java
+    public int getMovementLeft() {
+        return movementLeft;
+    }
+
+    public void setMovementLeft(int movementLeft) {
+        this.movementLeft = movementLeft;
+    }
+
+    public int getMovementRight() {
+        return movementRight;
+    }
+
+    public void setMovementRight(int movementRight) {
+        this.movementRight = movementRight;
+    }
+
+    public int getMovementTop() {
+        return movementTop;
+    }
+
+    public void setMovementTop(int movementTop) {
+        this.movementTop = movementTop;
+    }
+
+    public int getMovementBottom() {
+        return movementBottom;
+    }
+
+    public void setMovementBottom(int movementBottom) {
+        this.movementBottom = movementBottom;
+    }
+
+    public MoveDirection getMoveDirection() {
+        return moveDirection;
+    }
+
+    public void setMoveDirection(MoveDirection moveDirection) {
+        this.moveDirection = moveDirection;
+    }
+
+    public int getOffSetInner() {
+        return offSetInner;
+    }
+
+    public void setOffSetInner(int offSetInner) {
+        this.offSetInner = offSetInner;
+    }
+
+    public int getOffSetOuter() {
+        return offSetOuter;
+    }
+
+    public void setOffSetOuter(int offSetOuter) {
+        this.offSetOuter = offSetOuter;
+    }
+
+    public VibrationStrength getVibrationStrength() {
+        return vibrationStrength;
+    }
+
+    public void setVibrationStrength(VibrationStrength vibrationStrength) {
+        this.vibrationStrength = vibrationStrength;
+    }
+
+    public int getEventVolume() {
+        return eventVolume;
+    }
+
+    public void setEventVolume(int eventVolume) {
+        this.eventVolume = eventVolume;
+    }
+
+    public ButtonPosition getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public void setCurrentPosition(ButtonPosition currentPosition) {
+        this.currentPosition = currentPosition;
+    }
+```
+
 ## Listener
 
 ```java
@@ -87,40 +205,6 @@ movingButton.setOnPositionChangedListener(new MovingButton.OnPositionChangedList
         //your code here
     }
 });
-```
-
-## Sample Project
-
-You can download the latest sample APK from this repo here: [sample-release.apk](https://github.com/thefinestartist/movingbutton/raw/master/sample/sample-release.apk)
-
-It's also on Google Play:
-
-<a href="https://play.google.com/store/apps/details?id=com.thefinestartist.movingbutton.sample">
-  <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
-</a>
-
-Having the sample project installed is a good way to be notified of new releases.
-
-## Sample Demo
-
-You can download demo movie file here : [demo.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/demo.mov)
-
-It's also on Youtube:
-
-<a href="http://www.youtube.com/watch?v=myheMkavjzk">
-  <img alt="Youtube"
-       src="https://github.com/thefinestartist/movingbutton/blob/master/etc/youtube.png" />
-</a>
-
-## Gradle Dependency
-
-Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
-
-```Gradle
-dependencies {
-    compile 'com.thefinestartist:movingbutton:0.9.0' (work in process)
-}
 ```
 
 ## License
