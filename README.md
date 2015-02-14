@@ -1,8 +1,10 @@
 # Moving Button
 
 Android button which moves in eight direction.
+
 This library support Android API from 1.
-This library uses [nineoldandroid](http://nineoldandroids.com/) view animation.
+
+This library uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
 
 ## Preview
 
