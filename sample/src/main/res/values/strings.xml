@@ -13,4 +13,8 @@
     <string name="mb_vibration_strength">mb_vibration_strength</string>
     <string name="mb_movement_left">mb_movement_left</string>
     <string name="current_position">CURRENT POSITION</string>
+    <string name="choose">Choose</string>
+    <string name="cancel">Cancel</string>
+    <string name="move_direction">Move Direction</string>
+    <string name="vibration_strength">Vibration Strength</string>
 </resources>

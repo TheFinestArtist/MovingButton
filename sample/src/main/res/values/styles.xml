@@ -19,10 +19,10 @@
         <item name="md_item_color">@color/secondary_text</item>
         <item name="md_divider_color">@color/divider</item>
         <item name="md_list_selector">@drawable/selector</item>
-        <item name="md_btn_stacked_selector">@drawable/selector</item>
-        <item name="md_btn_positive_selector">@drawable/selector</item>
-        <item name="md_btn_neutral_selector">@drawable/selector</item>
-        <item name="md_btn_negative_selector">@drawable/selector</item>
+        <item name="md_btn_stacked_selector">@drawable/dialog_selector</item>
+        <item name="md_btn_positive_selector">@drawable/dialog_selector</item>
+        <item name="md_btn_neutral_selector">@drawable/dialog_selector</item>
+        <item name="md_btn_negative_selector">@drawable/dialog_selector_negative</item>
     </style>
 
 </resources>
