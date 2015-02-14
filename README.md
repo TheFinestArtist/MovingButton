@@ -1,6 +1,6 @@
 # Moving Button
 
-![Img](https://github.com/thefinestartist/movingbutton/blob/master/screenshots/preview.gif)
+![Img](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
 
 ## Sample Project
 
