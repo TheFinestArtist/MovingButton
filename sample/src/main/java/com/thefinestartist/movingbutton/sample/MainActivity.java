@@ -28,6 +28,34 @@ public class MainActivity extends ActionBarActivity {
     View moveDirectionBt;
     @InjectView(R.id.move_direction_tv)
     TextView moveDirectionTv;
+    @InjectView(R.id.movement_left_bt)
+    View movementLeftBt;
+    @InjectView(R.id.movement_left_tv)
+    TextView movementLeftTv;
+    @InjectView(R.id.movement_right_bt)
+    View movementRightBt;
+    @InjectView(R.id.movement_right_tv)
+    TextView movementRightTv;
+    @InjectView(R.id.movement_top_bt)
+    View movementTopBt;
+    @InjectView(R.id.movement_top_tv)
+    TextView movementTopTv;
+    @InjectView(R.id.movement_bottom_bt)
+    View movementBottomBt;
+    @InjectView(R.id.movement_bottom_tv)
+    TextView movementBottomTv;
+    @InjectView(R.id.movement_inner_offset_bt)
+    View innerOffsetBt;
+    @InjectView(R.id.movement_inner_offset_tv)
+    TextView innerOffsetTv;
+    @InjectView(R.id.movement_outer_offset_bt)
+    View outerOffsetBt;
+    @InjectView(R.id.movement_outer_offset_tv)
+    TextView outerOffsetTv;
+    @InjectView(R.id.volume_bt)
+    View volumeBt;
+    @InjectView(R.id.volume_tv)
+    TextView volumeTv;
     @InjectView(R.id.vibration_strength_bt)
     View vibrationStrengthBt;
     @InjectView(R.id.vibration_strength_tv)
@@ -67,6 +95,132 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        movementLeftBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.movement_left))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementLeft()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setMovementLeft(pxFromDp(which));
+                                movementLeftTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        movementRightBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.movement_right))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementRight()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setMovementRight(pxFromDp(which));
+                                movementRightTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        movementTopBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.movement_top))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementTop()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setMovementTop(pxFromDp(which));
+                                movementTopTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        movementBottomBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.movement_bottom))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementBottom()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setMovementBottom(pxFromDp(which));
+                                movementBottomTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        innerOffsetBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.inner_offset))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getOffSetInner()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setOffSetInner(pxFromDp(which));
+                                innerOffsetTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        outerOffsetBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.outer_offset))
+                        .items(getDPLists())
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getOffSetOuter()), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setOffSetOuter(pxFromDp(which));
+                                outerOffsetTv.setText("" + which + "dp");
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
+        volumeBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialDialog.Builder(MainActivity.this)
+                        .title(getString(R.string.volume))
+                        .items(getVolumeLists())
+                        .itemsCallbackSingleChoice(movingButton.getEventVolume(), new MaterialDialog.ListCallback() {
+                            @Override
+                            public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
+                                movingButton.setEventVolume(which);
+                                outerOffsetTv.setText("" + which);
+                            }
+                        })
+                        .positiveText(getString(R.string.choose))
+                        .show();
+            }
+        });
+
         vibrationStrengthBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +241,7 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    public static String[] getMoveDirectionNames() {
+    private String[] getMoveDirectionNames() {
         MoveDirection[] states = MoveDirection.values();
         String[] names = new String[states.length];
         for (int i = 0; i < states.length; i++)
@@ -95,11 +249,33 @@ public class MainActivity extends ActionBarActivity {
         return names;
     }
 
-    public static String[] getVibrationStrengthNames() {
+    private String[] getVibrationStrengthNames() {
         VibrationStrength[] states = VibrationStrength.values();
         String[] names = new String[states.length];
         for (int i = 0; i < states.length; i++)
             names[i] = states[i].name();
         return names;
+    }
+
+    private String[] getDPLists() {
+        String[] names = new String[21];
+        for (int i = 0; i < names.length; i++)
+            names[i] = "" + i + "dp";
+        return names;
+    }
+
+    private String[] getVolumeLists() {
+        String[] names = new String[101];
+        for (int i = 0; i < names.length; i++)
+            names[i] = "" + i;
+        return names;
+    }
+
+    private int dpFromPx(int px) {
+        return (int) (px / getResources().getDisplayMetrics().density);
+    }
+
+    private int pxFromDp(int dp) {
+        return (int) (dp * getResources().getDisplayMetrics().density);
     }
 }

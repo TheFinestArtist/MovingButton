@@ -17,4 +17,12 @@
     <string name="cancel">Cancel</string>
     <string name="move_direction">Move Direction</string>
     <string name="vibration_strength">Vibration Strength</string>
+    <string name="ok">OK</string>
+    <string name="movement_left">Movement Left</string>
+    <string name="movement_right">Movement Right</string>
+    <string name="movement_top">Movement Top</string>
+    <string name="movement_bottom">Movement Bottom</string>
+    <string name="inner_offset">Inner Offset</string>
+    <string name="outer_offset">Outer Offset</string>
+    <string name="volume">Volume</string>
 </resources>

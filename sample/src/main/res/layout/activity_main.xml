@@ -59,8 +59,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/button_background"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="45dp"
                 android:textSize="16dp"
                 android:textColor="@android:color/white"
                 android:text="@string/move"
@@ -131,6 +131,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_left_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -152,6 +153,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_left_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -177,6 +179,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_right_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -198,6 +201,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_right_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -223,6 +227,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_top_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -244,6 +249,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_top_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -269,6 +275,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_bottom_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -290,6 +297,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_bottom_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -315,6 +323,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_inner_offset_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -336,6 +345,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_inner_offset_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -361,6 +371,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/movement_outer_offset_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -382,6 +393,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/movement_outer_offset_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
@@ -407,6 +419,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
+                android:id="@+id/volume_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -428,6 +441,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/volume_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
