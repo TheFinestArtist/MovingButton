@@ -1,9 +1,8 @@
 # Moving Button
 
-Play Preview
 [![Preview](https://github.com/thefinestartist/movingbutton/raw/master/etc/play_preview.png)](http://www.youtube.com/watch?v=myheMkavjzk)
 
-You can download preview movie file here : [preview.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/preview.mov)
+You can download preview movie file here : [preview_movie.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/preview_movie.mov)
 
 ## Sample Project
 
