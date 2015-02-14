@@ -12,4 +12,5 @@
     <string name="mb_event_volume">mb_event_volume</string>
     <string name="mb_vibration_strength">mb_vibration_strength</string>
     <string name="mb_movement_left">mb_movement_left</string>
+    <string name="current_position">CURRENT POSITION</string>
 </resources>

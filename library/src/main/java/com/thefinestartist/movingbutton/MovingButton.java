@@ -83,7 +83,7 @@ public class MovingButton extends Button {
      * Touch Event
      */
     private boolean firstMoved;
-    ButtonPosition currentPosition;
+    ButtonPosition currentPosition = ButtonPosition.ORIGIN;
 
     private float halfWidth;
     private float halfHeight;

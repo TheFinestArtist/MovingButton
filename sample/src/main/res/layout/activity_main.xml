@@ -35,17 +35,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CURRENT POSITION"
+                    android:text="@string/current_position"
                     android:textColor="@color/accent"
                     android:textSize="14dp"
                     android:textStyle="bold"
                     android:includeFontPadding="false" />
 
                 <TextView
+                    android:id="@+id/current_position_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="STILL"
+                    android:text="ORIGIN"
                     android:textColor="@color/primary_text"
                     android:textSize="14dp"
                     android:textStyle="bold"
