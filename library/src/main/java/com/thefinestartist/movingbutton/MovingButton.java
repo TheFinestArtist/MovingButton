@@ -444,10 +444,6 @@ public class MovingButton extends Button {
         return currentPosition;
     }
 
-    public void setCurrentPosition(ButtonPosition currentPosition) {
-        this.currentPosition = currentPosition;
-    }
-
     public OnPositionChangedListener getOnPositionChangedListener() {
         return onPositionChangedListener;
     }

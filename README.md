@@ -110,85 +110,38 @@ dependencies {
 ## Setter & Getter
 
 ```java
-    public int getMovementLeft() {
-        return movementLeft;
-    }
+    // Move Direction
+    movingButton.getMoveDirection();
+    movingButton.setMoveDirection(MoveDirection.ALL);
 
-    public void setMovementLeft(int movementLeft) {
-        this.movementLeft = movementLeft;
-    }
+    // Movement (in Pixel dimension)
+    movingButton.getMovement();
+    movingButton.setMovement(10);
+    movingButton.getMovementLeft();
+    movingButton.setMovementLeft(10);
+    movingButton.getMovementRight();
+    movingButton.setMovementRight(10);
+    movingButton.getMovementTop();
+    movingButton.setMovementTop(10);
+    movingButton.getMovementBottom();
+    movingButton.setMovementBottom(10);
 
-    public int getMovementRight() {
-        return movementRight;
-    }
+    // Offset (in Pixel dimension)
+    movingButton.getOffSetInner();
+    movingButton.setOffSetInner(10);
+    movingButton.getOffSetOuter();
+    movingButton.setOffSetOuter(10);
 
-    public void setMovementRight(int movementRight) {
-        this.movementRight = movementRight;
-    }
+    // Vibration
+    movingButton.getVibrationStrength();
+    movingButton.setVibrationStrength(VibrationStrength.NORMAL);
 
-    public int getMovementTop() {
-        return movementTop;
-    }
+    // Volume
+    movingButton.getEventVolume();
+    movingButton.setEventVolume(50);
 
-    public void setMovementTop(int movementTop) {
-        this.movementTop = movementTop;
-    }
-
-    public int getMovementBottom() {
-        return movementBottom;
-    }
-
-    public void setMovementBottom(int movementBottom) {
-        this.movementBottom = movementBottom;
-    }
-
-    public MoveDirection getMoveDirection() {
-        return moveDirection;
-    }
-
-    public void setMoveDirection(MoveDirection moveDirection) {
-        this.moveDirection = moveDirection;
-    }
-
-    public int getOffSetInner() {
-        return offSetInner;
-    }
-
-    public void setOffSetInner(int offSetInner) {
-        this.offSetInner = offSetInner;
-    }
-
-    public int getOffSetOuter() {
-        return offSetOuter;
-    }
-
-    public void setOffSetOuter(int offSetOuter) {
-        this.offSetOuter = offSetOuter;
-    }
-
-    public VibrationStrength getVibrationStrength() {
-        return vibrationStrength;
-    }
-
-    public void setVibrationStrength(VibrationStrength vibrationStrength) {
-        this.vibrationStrength = vibrationStrength;
-    }
-
-    public int getEventVolume() {
-        return eventVolume;
-    }
-
-    public void setEventVolume(int eventVolume) {
-        this.eventVolume = eventVolume;
-    }
-
-    public ButtonPosition getCurrentPosition() {
-        return currentPosition;
-    }
-
-    public void setCurrentPosition(ButtonPosition currentPosition) {
-        this.currentPosition = currentPosition;
-    }
+    // Current Position
+    movingButton.getCurrentPosition();
 ```
 
 ## Listener
