@@ -1,18 +1,22 @@
 # Moving Button
 
+Android button which moves in eight direction.
+This library support Android API from 1.
+This library uses [nineoldandroid](http://nineoldandroids.com/) view animation.
+
 ## Preview
 
-![Preview](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
+![Preview](https://github.com/thefinestartist/movingbutton/blob/master/art/preview.gif)
 
 ## Sample Demo
 
-You can download demo movie file here : [demo.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/demo.mov)
+You can download demo movie file here : [demo.mov](https://github.com/thefinestartist/movingbutton/raw/master/art/demo.mov)
 
 It's also on Youtube:
 
 <a href="http://www.youtube.com/watch?v=myheMkavjzk">
   <img alt="Youtube"
-       src="https://github.com/thefinestartist/movingbutton/blob/master/etc/youtube.png" />
+       src="https://github.com/thefinestartist/movingbutton/blob/master/art/youtube.png" />
 </a>
 
 ## Sample Project
@@ -28,7 +32,7 @@ It's also on Google Play:
 
 Having the sample project installed is a good way to be notified of new releases.
 
-## Gradle Dependency
+## Dependency
 
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
 
