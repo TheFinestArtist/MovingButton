@@ -1,5 +1,6 @@
 # Moving Button
 
+![Preview](https://github.com/thefinestartist/movingbutton/blob/master/etc/preview.gif)
 
 ## Sample Project
 
@@ -16,7 +17,7 @@ Having the sample project installed is a good way to be notified of new releases
 
 ## Sample Demo
 
-You can download demo movie file here : [preview_movie.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/preview_movie.mov)
+You can download demo movie file here : [demo.mov](https://github.com/thefinestartist/movingbutton/raw/master/etc/demo.mov)
 
 It's also on Youtube:
 
