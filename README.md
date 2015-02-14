@@ -2,10 +2,6 @@
 
 Android button which moves in eight direction.
 
-This library support Android API from 1.
-
-This library uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
-
 ## Preview
 
 ![Preview](https://github.com/thefinestartist/movingbutton/blob/master/art/preview.gif)
@@ -34,15 +30,21 @@ It's also on Google Play:
 
 Having the sample project installed is a good way to be notified of new releases.
 
-## Dependency
+## Gradle Dependency
 
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
 
 ```Gradle
 dependencies {
-    compile 'com.thefinestartist:movingbutton:0.9.1' (work in process)
+    compile 'com.thefinestartist:movingbutton:0.9.1'
 }
 ```
+
+## Requirements
+
+It supports Android API 1+.
+
+It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
 
 ## Attrubutes
 
