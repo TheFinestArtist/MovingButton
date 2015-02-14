@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+
+    dependencies {
+        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'crashlytics'
+
+repositories {
+    maven { url 'http://download.crashlytics.com/maven' }
+}
+
 
 android {
     compileSdkVersion 21
@@ -8,8 +23,8 @@ android {
         applicationId "com.thefinestartist.movingbutton.sample"
         minSdkVersion 8
         targetSdkVersion 21
-        versionCode 1
-        versionName "0.9.0"
+        versionCode 2
+        versionName "0.9.1"
     }
     buildTypes {
         release {
@@ -25,4 +40,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.2'
     compile 'com.afollestad:material-dialogs:0.6.2.4'
     compile project(':library')
+    compile 'com.crashlytics.android:crashlytics:1.+'
 }

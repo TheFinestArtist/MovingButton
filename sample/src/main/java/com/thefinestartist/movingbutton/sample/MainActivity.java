@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.crashlytics.android.Crashlytics;
 import com.thefinestartist.movingbutton.MovingButton;
 import com.thefinestartist.movingbutton.enums.ButtonPosition;
 import com.thefinestartist.movingbutton.enums.MoveDirection;
@@ -64,6 +65,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Crashlytics.start(this);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
@@ -172,7 +174,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.inner_offset))
-                        .items(getDPLists())
+                        .items(getDPLists2())
                         .itemsCallbackSingleChoice(dpFromPx(movingButton.getOffSetInner()), new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
@@ -190,7 +192,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.outer_offset))
-                        .items(getDPLists())
+                        .items(getDPLists2())
                         .itemsCallbackSingleChoice(dpFromPx(movingButton.getOffSetOuter()), new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
@@ -258,7 +260,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private String[] getDPLists() {
-        String[] names = new String[21];
+        String[] names = new String[31];
+        for (int i = 0; i < names.length; i++)
+            names[i] = "" + i + "dp";
+        return names;
+    }
+
+    private String[] getDPLists2() {
+        String[] names = new String[51];
         for (int i = 0; i < names.length; i++)
             names[i] = "" + i + "dp";
         return names;
