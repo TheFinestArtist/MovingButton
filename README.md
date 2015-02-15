@@ -51,7 +51,7 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
 ## Attrubutes
 
 ```xml
-<!--Button Move Direction-->
+<!--Button Move Direction (Default : all)-->
 <attr name="mb_move_direction">
     <enum name="all" value="0" />
     <enum name="horizontal_vertical" value="1" />
@@ -60,19 +60,21 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
     <enum name="still" value="4" />
 </attr>
 
-<!--Button Movement-->
+<!--Button Movement (Default : 0dp)-->
+<!--Since DEFAULT value is ZERO, set up your button movement larger than zero.-->
+<!--You can set up the movement as minus value-->
 <attr name="mb_movement" format="dimension" />
 <attr name="mb_movement_left" format="dimension" />
 <attr name="mb_movement_right" format="dimension" />
 <attr name="mb_movement_top" format="dimension" />
 <attr name="mb_movement_bottom" format="dimension" />
 
-<!--Button Event Offset-->
+<!--Button Event Offset (Default : 16dp for inner & 23dp for outer)-->
 <!--Helps to calculate touch event from button-->
 <attr name="mb_offset_inner" format="dimension" />
 <attr name="mb_offset_outer" format="dimension" />
 
-<!--Vibrate on button movement-->
+<!--Vibrate on button movement (Default : none)-->
 <!--android.permission.VIBRATE Permission required-->
 <!--if you set the strength as none, no Permission required!-->
 <attr name="mb_vibration_strength">
@@ -84,7 +86,7 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
     <enum name="strongest" value="5" />
 </attr>
 
-<!--Play sound on button movement-->
+<!--Play sound on button movement (Default : 0)-->
 <attr name="mb_event_volume" format="integer" />
 ```
 

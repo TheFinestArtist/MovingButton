@@ -103,11 +103,11 @@ public class MainActivity extends ActionBarActivity {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.movement_left))
                         .items(getDPLists())
-                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementLeft()), new MaterialDialog.ListCallback() {
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementLeft()) + 10, new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
-                                movingButton.setMovementLeft(pxFromDp(which));
-                                movementLeftTv.setText("" + which + "dp");
+                                movingButton.setMovementLeft(pxFromDp(which - 10));
+                                movementLeftTv.setText("" + (which - 10) + "dp");
                             }
                         })
                         .positiveText(getString(R.string.choose))
@@ -121,11 +121,11 @@ public class MainActivity extends ActionBarActivity {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.movement_right))
                         .items(getDPLists())
-                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementRight()), new MaterialDialog.ListCallback() {
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementRight()) + 10, new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
-                                movingButton.setMovementRight(pxFromDp(which));
-                                movementRightTv.setText("" + which + "dp");
+                                movingButton.setMovementRight(pxFromDp(which - 10));
+                                movementRightTv.setText("" + (which - 10) + "dp");
                             }
                         })
                         .positiveText(getString(R.string.choose))
@@ -139,11 +139,11 @@ public class MainActivity extends ActionBarActivity {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.movement_top))
                         .items(getDPLists())
-                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementTop()), new MaterialDialog.ListCallback() {
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementTop()) + 10, new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
-                                movingButton.setMovementTop(pxFromDp(which));
-                                movementTopTv.setText("" + which + "dp");
+                                movingButton.setMovementTop(pxFromDp(which - 10));
+                                movementTopTv.setText("" + (which - 10) + "dp");
                             }
                         })
                         .positiveText(getString(R.string.choose))
@@ -157,11 +157,11 @@ public class MainActivity extends ActionBarActivity {
                 new MaterialDialog.Builder(MainActivity.this)
                         .title(getString(R.string.movement_bottom))
                         .items(getDPLists())
-                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementBottom()), new MaterialDialog.ListCallback() {
+                        .itemsCallbackSingleChoice(dpFromPx(movingButton.getMovementBottom()) + 10, new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
-                                movingButton.setMovementBottom(pxFromDp(which));
-                                movementBottomTv.setText("" + which + "dp");
+                                movingButton.setMovementBottom(pxFromDp(which - 10));
+                                movementBottomTv.setText("" + (which - 10) + "dp");
                             }
                         })
                         .positiveText(getString(R.string.choose))
@@ -260,9 +260,9 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private String[] getDPLists() {
-        String[] names = new String[31];
+        String[] names = new String[41];
         for (int i = 0; i < names.length; i++)
-            names[i] = "" + i + "dp";
+            names[i] = "" + (i - 10) + "dp";
         return names;
     }
 
