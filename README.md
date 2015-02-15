@@ -1,5 +1,6 @@
 # Moving Button
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MovingButton-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1537)
 Android button which moves in eight direction.
 
 ## Preview
@@ -36,13 +37,13 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```Gradle
 dependencies {
-    compile 'com.thefinestartist:movingbutton:0.9.1'
+    compile 'com.thefinestartist:movingbutton:0.9.2'
 }
 ```
 
 ## Requirements
 
-It supports Android API 1+.
+It supports Android API 3+.
 
 It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
 

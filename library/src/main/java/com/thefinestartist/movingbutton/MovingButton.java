@@ -12,7 +12,7 @@ import com.nineoldandroids.view.ViewHelper;
 import com.thefinestartist.movingbutton.enums.ButtonPosition;
 import com.thefinestartist.movingbutton.enums.MoveDirection;
 import com.thefinestartist.movingbutton.enums.VibrationStrength;
-import com.thefinestartist.movingbutton.utils.SoundUtil;
+import com.thefinestartist.movingbutton.utils.AudioUtil;
 import com.thefinestartist.movingbutton.utils.VibrateUtil;
 
 /**
@@ -350,7 +350,7 @@ public class MovingButton extends Button {
 
     private void soundAndVibrate() {
         VibrateUtil.vibtate(getContext(), vibrationStrength);
-        SoundUtil.playSound(getContext(), eventVolume);
+        AudioUtil.playKeyClickSound(getContext(), eventVolume);
     }
 
     private void positionChanged(int action, ButtonPosition position) {
