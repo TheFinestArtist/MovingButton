@@ -1,6 +1,7 @@
 # Moving Button
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MovingButton-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1537)
+
 Android button which moves in eight direction.
 
 ## Preview
