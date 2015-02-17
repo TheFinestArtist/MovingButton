@@ -10,13 +10,13 @@
     <string name="mb_offset_inner">mb_offset_inner</string>
     <string name="mb_offset_outer">mb_offset_outer</string>
     <string name="mb_event_volume">mb_event_volume</string>
-    <string name="mb_vibration_strength">mb_vibration_strength</string>
+    <string name="mb_vibration_duration">mb_vibration_duration</string>
     <string name="mb_movement_left">mb_movement_left</string>
     <string name="current_position">CURRENT POSITION</string>
     <string name="choose">Choose</string>
     <string name="cancel">Cancel</string>
     <string name="move_direction">Move Direction</string>
-    <string name="vibration_strength">Vibration Strength</string>
+    <string name="vibration_duration">Vibration Duration</string>
     <string name="ok">OK</string>
     <string name="movement_left">Movement Left</string>
     <string name="movement_right">Movement Right</string>

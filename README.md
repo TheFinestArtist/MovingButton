@@ -1,6 +1,4 @@
-# Moving Button
-
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MovingButton-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1537)
+# Moving Button [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MovingButton-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1537) [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 Android button which moves in eight direction.
 
@@ -32,7 +30,7 @@ It's also on Google Play:
 
 Having the sample project installed is a good way to be notified of new releases.
 
-## Gradle Dependency
+## Gradle Dependency (jcenter)
 
 Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
 
@@ -74,17 +72,10 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
 <attr name="mb_offset_inner" format="dimension" />
 <attr name="mb_offset_outer" format="dimension" />
 
-<!--Vibrate on button movement (Default : none)-->
+<!--Vibrate on button movement (Default : 0)-->
 <!--android.permission.VIBRATE Permission required-->
-<!--if you set the strength as none, no Permission required!-->
-<attr name="mb_vibration_strength">
-    <enum name="none" value="0" />
-    <enum name="weakest" value="1" />
-    <enum name="weak" value="2" />
-    <enum name="normal" value="3" />
-    <enum name="strong" value="4" />
-    <enum name="strongest" value="5" />
-</attr>
+<!--if you set the duration as 0, no Permission required!-->
+<attr name="mb_event_volume" format="integer" />
 
 <!--Play sound on button movement (Default : 0)-->
 <attr name="mb_event_volume" format="integer" />
@@ -100,7 +91,7 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
     android:layout_height="40dp"
     app:mb_move_direction="vertical"
     app:mb_event_volume="0"
-    app:mb_vibration_strength="none"
+    app:mb_vibration_duration="20"
     app:mb_movement="10dp" />
 
 <com.thefinestartist.movingbutton.MovingButton
@@ -110,7 +101,7 @@ It uses [nineoldandroid](http://nineoldandroids.com/) for view animation.
     android:layout_height="40dp"
     app:mb_move_direction="all"
     app:mb_event_volume="50"
-    app:mb_vibration_strength="normal"
+    app:mb_vibration_duration="20"
     app:mb_movementLeft="10dp"
     app:mb_movementRight="15dp"
     app:mb_movementTop="5dp"
@@ -145,8 +136,8 @@ movingButton.getOffSetOuter();
 movingButton.setOffSetOuter(10);
 
 // Vibration
-movingButton.getVibrationStrength();
-movingButton.setVibrationStrength(VibrationStrength.NORMAL);
+movingButton.getVibrationDuration();
+movingButton.setVibrationDuration(20);
 
 // Volume
 movingButton.getEventVolume();

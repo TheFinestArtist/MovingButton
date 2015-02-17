@@ -11,7 +11,6 @@ import com.crashlytics.android.Crashlytics;
 import com.thefinestartist.movingbutton.MovingButton;
 import com.thefinestartist.movingbutton.enums.ButtonPosition;
 import com.thefinestartist.movingbutton.enums.MoveDirection;
-import com.thefinestartist.movingbutton.enums.VibrationStrength;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -57,10 +56,10 @@ public class MainActivity extends ActionBarActivity {
     View volumeBt;
     @InjectView(R.id.volume_tv)
     TextView volumeTv;
-    @InjectView(R.id.vibration_strength_bt)
-    View vibrationStrengthBt;
-    @InjectView(R.id.vibration_strength_tv)
-    TextView vibrationStrengthTv;
+    @InjectView(R.id.vibration_duration_bt)
+    View vibrationDurationBt;
+    @InjectView(R.id.vibration_duration_tv)
+    TextView vibrationDurationTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +92,6 @@ public class MainActivity extends ActionBarActivity {
                         })
                         .positiveText(getString(R.string.choose))
                         .show();
-
             }
         });
 
@@ -223,18 +221,17 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        vibrationStrengthBt.setOnClickListener(new View.OnClickListener() {
+        vibrationDurationBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new MaterialDialog.Builder(MainActivity.this)
-                        .title(getString(R.string.vibration_strength))
-                        .items(getVibrationStrengthNames())
-                        .itemsCallbackSingleChoice(movingButton.getVibrationStrength().ordinal(), new MaterialDialog.ListCallback() {
+                        .title(getString(R.string.vibration_duration))
+                        .items(getVibrationLists())
+                        .itemsCallbackSingleChoice(movingButton.getVibrationDuration(), new MaterialDialog.ListCallback() {
                             @Override
                             public void onSelection(MaterialDialog materialDialog, View view, int which, CharSequence text) {
-                                VibrationStrength vibrationStrength = VibrationStrength.values()[which];
-                                movingButton.setVibrationStrength(vibrationStrength);
-                                vibrationStrengthTv.setText(vibrationStrength.name());
+                                movingButton.setVibrationDuration(which);
+                                vibrationDurationTv.setText(which + " Milliseconds");
                             }
                         })
                         .positiveText(getString(R.string.choose))
@@ -251,11 +248,10 @@ public class MainActivity extends ActionBarActivity {
         return names;
     }
 
-    private String[] getVibrationStrengthNames() {
-        VibrationStrength[] states = VibrationStrength.values();
-        String[] names = new String[states.length];
-        for (int i = 0; i < states.length; i++)
-            names[i] = states[i].name();
+    private String[] getVibrationLists() {
+        String[] names = new String[101];
+        for (int i = 0; i < names.length; i++)
+            names[i] = "" + i + " Milliseconds";
         return names;
     }
 

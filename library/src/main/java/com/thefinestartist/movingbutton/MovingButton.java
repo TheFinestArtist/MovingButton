@@ -11,7 +11,6 @@ import android.widget.Button;
 import com.nineoldandroids.view.ViewHelper;
 import com.thefinestartist.movingbutton.enums.ButtonPosition;
 import com.thefinestartist.movingbutton.enums.MoveDirection;
-import com.thefinestartist.movingbutton.enums.VibrationStrength;
 import com.thefinestartist.movingbutton.utils.AudioUtil;
 import com.thefinestartist.movingbutton.utils.VibrateUtil;
 
@@ -34,7 +33,7 @@ public class MovingButton extends Button {
     int offSetInner;
     int offSetOuter;
 
-    VibrationStrength vibrationStrength;
+    int vibrationDuration;
 
     int eventVolume;
 
@@ -73,7 +72,7 @@ public class MovingButton extends Button {
         offSetOuter = attr.getDimensionPixelSize(R.styleable.MovingButton_mb_offset_outer,
                 getResources().getDimensionPixelSize(R.dimen.default_offset_outer));
 
-        vibrationStrength = VibrationStrength.values()[attr.getInt(R.styleable.MovingButton_mb_vibration_strength, 0)];
+        vibrationDuration = attr.getInt(R.styleable.MovingButton_mb_vibration_duration, 0);
         eventVolume = attr.getInt(R.styleable.MovingButton_mb_event_volume, 0);
 
         attr.recycle();
@@ -82,7 +81,6 @@ public class MovingButton extends Button {
     /**
      * Touch Event
      */
-    private boolean firstMoved;
     ButtonPosition currentPosition = ButtonPosition.ORIGIN;
 
     private float halfWidth;
@@ -101,7 +99,6 @@ public class MovingButton extends Button {
                 halfWidth = (float) this.getWidth() / 2.0f;
                 halfHeight = (float) this.getHeight() / 2.0f;
                 currentPosition = ButtonPosition.ORIGIN;
-                firstMoved = true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 recalculateCenter();
@@ -112,10 +109,9 @@ public class MovingButton extends Button {
                     case ALL: {
                         double length = Math.sqrt(Math.pow(diffX, 2d) + Math.pow(diffY, 2d));
                         if (length > offSetOuter)
-                            if (firstMoved) {
+                            if (currentPosition == ButtonPosition.ORIGIN)
                                 moveView(this, getPositionForAll(diffX, diffY));
-                                firstMoved = false;
-                            } else
+                            else
                                 moveView(this, getDetailedPositionForAll(diffX, diffY));
                         else if (length < offSetInner)
                             moveView(this, ButtonPosition.ORIGIN);
@@ -124,10 +120,9 @@ public class MovingButton extends Button {
                     case HORIZONTAL_VERTICAL: {
                         double length = Math.sqrt(Math.pow(diffX, 2d) + Math.pow(diffY, 2d));
                         if (length > offSetOuter)
-                            if (firstMoved) {
+                            if (currentPosition == ButtonPosition.ORIGIN)
                                 moveView(this, getPositionForHV(diffX, diffY));
-                                firstMoved = false;
-                            } else
+                            else
                                 moveView(this, getDetailedPositionForHV(diffX, diffY));
                         else if (length < offSetInner)
                             moveView(this, ButtonPosition.ORIGIN);
@@ -349,7 +344,7 @@ public class MovingButton extends Button {
     }
 
     private void soundAndVibrate() {
-        VibrateUtil.vibtate(getContext(), vibrationStrength);
+        VibrateUtil.vibtate(getContext(), vibrationDuration);
         AudioUtil.playKeyClickSound(getContext(), eventVolume);
     }
 
@@ -422,12 +417,12 @@ public class MovingButton extends Button {
         this.offSetOuter = offSetOuter;
     }
 
-    public VibrationStrength getVibrationStrength() {
-        return vibrationStrength;
+    public int getVibrationDuration() {
+        return vibrationDuration;
     }
 
-    public void setVibrationStrength(VibrationStrength vibrationStrength) {
-        this.vibrationStrength = vibrationStrength;
+    public void setVibrationDuration(int vibrationDuration) {
+        this.vibrationDuration = vibrationDuration;
     }
 
     public int getEventVolume() {

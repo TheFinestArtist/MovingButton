@@ -28,8 +28,7 @@ public class AudioUtil {
     }
 
     public static void playKeyClickSound(Context context, int volume) {
-        if (volume == 0)
-            return;
-        getInstance(context).playSoundEffect(AudioManager.FX_KEY_CLICK, (float) volume / 100.0f);
+        if (volume > 0)
+            getInstance(context).playSoundEffect(AudioManager.FX_KEY_CLICK, (float) volume / 100.0f);
     }
 }

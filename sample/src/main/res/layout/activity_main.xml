@@ -109,7 +109,7 @@
                     android:includeFontPadding="false"
                     app:mb_move_direction="all"
                     app:mb_event_volume="50"
-                    app:mb_vibration_strength="normal"
+                    app:mb_vibration_duration="20"
                     app:mb_movement="10dp" />
             </FrameLayout>
 
@@ -510,7 +510,7 @@
                 android:background="@color/divider" />
 
             <LinearLayout
-                android:id="@+id/vibration_strength_bt"
+                android:id="@+id/vibration_duration_bt"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:background="@drawable/selector"
@@ -532,13 +532,13 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/vibration_strength_tv"
+                        android:id="@+id/vibration_duration_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="16dp"
-                        android:text="VIBRATION_NORMAL"
+                        android:text="20 Milliseconds"
                         android:includeFontPadding="false" />
 
                     <TextView
@@ -546,7 +546,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="?android:attr/textColorSecondary"
                         android:textSize="10dp"
-                        android:text="@string/mb_vibration_strength"
+                        android:text="@string/mb_vibration_duration"
                         android:includeFontPadding="false" />
                 </LinearLayout>
             </LinearLayout>

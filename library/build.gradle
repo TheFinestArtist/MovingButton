@@ -9,7 +9,7 @@ android {
         minSdkVersion 3
         targetSdkVersion 21
         versionCode 1
-        versionName "0.9.2"
+        versionName "1.0.0"
     }
     lintOptions {
         abortOnError false
@@ -24,7 +24,7 @@ publish {
     userOrg = 'thefinestartist'
     groupId = 'com.thefinestartist'
     artifactId = 'movingbutton'
-    version = '0.9.2'
+    version = '1.0.0'
     description = 'Android button which moves in eight direction.'
     website = 'https://github.com/TheFinestArtist/MovingButton'
 }
