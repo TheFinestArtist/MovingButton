@@ -1,4 +1,6 @@
 # Moving Button
+
+[![Join the chat at https://gitter.im/TheFinestArtist/MovingButton](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TheFinestArtist/MovingButton?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MovingButton-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1537)
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
 [![API](https://img.shields.io/badge/API-3%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=3)
