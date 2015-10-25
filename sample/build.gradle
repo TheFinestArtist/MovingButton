@@ -12,17 +12,18 @@ apply plugin: 'crashlytics'
 
 repositories {
     maven { url 'http://download.crashlytics.com/maven' }
+    maven { url "https://jitpack.io" }
 }
 
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.thefinestartist.movingbutton.sample"
         minSdkVersion 8
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionCode 3
         versionName "1.0.0"
     }
@@ -37,8 +38,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':library')
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.jakewharton:butterknife:5.1.2'
-    compile 'com.afollestad:material-dialogs:0.6.2.4'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile('com.afollestad.material-dialogs:core:0.8.1.0@aar') {
+        transitive = true
+    }
+    compile('com.afollestad.material-dialogs:commons:0.8.1.0@aar') {
+        transitive = true
+    }
     compile 'com.crashlytics.android:crashlytics:1.+'
 }
