@@ -42,7 +42,7 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```Gradle
 dependencies {
-    compile 'com.thefinestartist:movingbutton:1.0.0'
+    implementation 'com.thefinestartist:movingbutton:1.0.0'
 }
 ```
 
